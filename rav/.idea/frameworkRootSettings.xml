@@ -4,7 +4,10 @@
     <option name="typedPaths">
       <list>
         <element elementPath="$PROJECT_DIR$/app" typeId="app_directory" />
+<<<<<<< HEAD
         <element elementPath="$PROJECT_DIR$/vendor" typeId="vendor_directory" />
+=======
+>>>>>>> origin/master
         <element elementPath="$PROJECT_DIR$/web" typeId="web_directory" />
       </list>
     </option>
