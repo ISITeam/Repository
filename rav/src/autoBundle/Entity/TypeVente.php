@@ -5,12 +5,12 @@ namespace autoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * carburant
+ * TypeVente
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="autoBundle\Entity\carburantRepository")
+ * @ORM\Entity(repositoryClass="autoBundle\Entity\TypeVenteRepository")
  */
-class carburant
+class TypeVente
 {
     /**
      * @var integer
@@ -32,7 +32,7 @@ class carburant
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -43,7 +43,7 @@ class carburant
      * Set type
      *
      * @param string $type
-     * @return carburant
+     * @return TypeVente
      */
     public function setType($type)
     {
@@ -55,7 +55,7 @@ class carburant
     /**
      * Get type
      *
-     * @return string
+     * @return string 
      */
     public function getType()
     {
