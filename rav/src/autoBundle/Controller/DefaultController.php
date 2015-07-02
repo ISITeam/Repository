@@ -66,7 +66,7 @@ class DefaultController extends Controller
                 $em->flush();
 
             }catch(\Exception $e){
-                $error = "une erreur est survenue :" . $e->getMessage();;
+                $error = "une erreur est survenue :" . $e->getMessage();
             }
 
             // Passage de paramètres à ma vue index.html.twig
