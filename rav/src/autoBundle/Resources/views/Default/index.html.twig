@@ -1,2 +1,24 @@
-<h1>Mon type de carburant</h1>
-Carburant : {{ carburantObject.type}}
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/rav.css') }}" />
+{% endblock %}
+
+{% block body %}
+
+    <table>
+        <tbody>
+        {% for voiture in voitures %}
+            <tr>
+                <td>{{ voiture.marque }}</td>
+                <td>{{ voiture.modele }}</td>
+                <td>{{ voiture.carburant }}</td>
+                <td>{{ voiture.kilometrage }}</td>
+                <td>{{ voiture.annee }}</td>
+                <td>{{ voiture.portes }}</td>
+                <td>{{ voiture.prix }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
