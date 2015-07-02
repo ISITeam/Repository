@@ -48,7 +48,7 @@ class DefaultController extends Controller
             ($_POST['kilometrage'])&&
             ($_POST['annee'])&&
             ($_POST['portes'])&&
-            ($_POST['prix']));
+            ($_POST['prix']))
         {
             //enregistrement
             $voiture = new voiture();
