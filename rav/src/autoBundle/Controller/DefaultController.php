@@ -20,10 +20,8 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-
         $repository = $this->getDoctrine()
             ->getRepository('autoBundle:voiture');
-
 
         try {
             $allVoiture = $repository->findAll();
@@ -44,7 +42,7 @@ class DefaultController extends Controller
 
         var_dump($_POST);
 
-        if (isset($_POST['marque'])&&
+        if(isset($_POST['marque'])&&
             ($_POST['modele'])&&
             ($_POST['carburant'])&&
             ($_POST['kilometrage'])&&
@@ -62,8 +60,6 @@ class DefaultController extends Controller
             $voiture->setPortes($_POST['portes']);
             $voiture->setPrix($_POST['prix']);
 
-
-
             try {
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($voiture);
@@ -74,7 +70,7 @@ class DefaultController extends Controller
             }
 
             // Passage de paramètres à ma vue index.html.twig
-            return array('error' => $error, "insertAuto" => $voiture);
+            return array('error' => $error);
         }
 
         return array("error" => false);
