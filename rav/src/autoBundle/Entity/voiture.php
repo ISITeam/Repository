@@ -31,7 +31,7 @@ class voiture
     /**
      * @var string
      *
-     * @ORM\Column(name="modele", type="string", length=255)
+     * @ORM\Column(name="modele", type="string", length=255 nullable=true)
      */
     private $modele;
 
@@ -81,21 +81,11 @@ class voiture
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Get marque
-     *
-     * @return string
-     */
-    public function getMarque()
-    {
-        return $this->marque;
     }
 
     /**
@@ -112,13 +102,13 @@ class voiture
     }
 
     /**
-     * Get modele
+     * Get marque
      *
-     * @return string
+     * @return string 
      */
-    public function getModele()
+    public function getMarque()
     {
-        return $this->modele;
+        return $this->marque;
     }
 
     /**
@@ -135,13 +125,13 @@ class voiture
     }
 
     /**
-     * Get carburant
+     * Get modele
      *
-     * @return string
+     * @return string 
      */
-    public function getCarburant()
+    public function getModele()
     {
-        return $this->carburant;
+        return $this->modele;
     }
 
     /**
@@ -158,13 +148,13 @@ class voiture
     }
 
     /**
-     * Get kilometrage
+     * Get carburant
      *
-     * @return integer
+     * @return string 
      */
-    public function getKilometrage()
+    public function getCarburant()
     {
-        return $this->kilometrage;
+        return $this->carburant;
     }
 
     /**
@@ -181,13 +171,13 @@ class voiture
     }
 
     /**
-     * Get prix
+     * Get kilometrage
      *
-     * @return float
+     * @return integer 
      */
-    public function getPrix()
+    public function getKilometrage()
     {
-        return $this->prix;
+        return $this->kilometrage;
     }
 
     /**
@@ -204,13 +194,13 @@ class voiture
     }
 
     /**
-     * Get annee
+     * Get prix
      *
-     * @return integer
+     * @return float 
      */
-    public function getAnnee()
+    public function getPrix()
     {
-        return $this->annee;
+        return $this->prix;
     }
 
     /**
@@ -227,13 +217,13 @@ class voiture
     }
 
     /**
-     * Get description
+     * Get annee
      *
-     * @return string
+     * @return integer 
      */
-    public function getDescription()
+    public function getAnnee()
     {
-        return $this->description;
+        return $this->annee;
     }
 
     /**
@@ -250,13 +240,13 @@ class voiture
     }
 
     /**
-     * Get portes
+     * Get description
      *
-     * @return integer
+     * @return string 
      */
-    public function getPortes()
+    public function getDescription()
     {
-        return $this->portes;
+        return $this->description;
     }
 
     /**
@@ -270,5 +260,15 @@ class voiture
         $this->portes = $portes;
 
         return $this;
+    }
+
+    /**
+     * Get portes
+     *
+     * @return integer 
+     */
+    public function getPortes()
+    {
+        return $this->portes;
     }
 }

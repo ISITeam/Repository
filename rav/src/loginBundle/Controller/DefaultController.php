@@ -4,6 +4,8 @@ namespace loginBundle\Controller;
 
 use loginBundle\Entity\users;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class DefaultController extends Controller
 {
@@ -36,7 +38,6 @@ class DefaultController extends Controller
         // On fait le passage de paramètres à la vue index.html.twig
         return array('error' => $error, "indexAction" => $user);
     }
-
     public function allUsersAction()
     {
         $error = null;
@@ -45,7 +46,7 @@ class DefaultController extends Controller
             ->getRepository('loginBundle:User');
         try {
             $allProfile = $repository->findAll();
-        } catch (\Exception $e) {
+        }catch(\Exception $e){
             $error = "une erreur est survenue " . $e->getMessage();
         }
         return array('error' => $error, "allUser" => $allProfile);

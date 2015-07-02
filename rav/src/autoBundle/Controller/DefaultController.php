@@ -2,8 +2,14 @@
 
 namespace autoBundle\Controller;
 
+use Doctrine\ORM\Mapping\Entity;
+use autoBundle\Entity\marque;
+use autoBundle\Entity\modele;
+use autoBundle\Entity\TypeVente;
 use autoBundle\Entity\voiture;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 
 class DefaultController extends Controller
@@ -19,7 +25,7 @@ class DefaultController extends Controller
 
         try {
             $allVoiture = $repository->findAll();
-        } catch (\Exception $e) {
+        }catch(\Exception $e){
             $error = "une erreur est survenue " . $e->getMessage();
         }
 
@@ -36,14 +42,14 @@ class DefaultController extends Controller
 
         var_dump($_POST);
 
-        if (isset($_POST['marque']) &&
-            ($_POST['modele']) &&
-            ($_POST['carburant']) &&
-            ($_POST['kilometrage']) &&
-            ($_POST['annee']) &&
-            ($_POST['portes']) &&
-            ($_POST['prix'])
-        ) {
+        if(isset($_POST['marque'])&&
+            ($_POST['modele'])&&
+            ($_POST['carburant'])&&
+            ($_POST['kilometrage'])&&
+            ($_POST['annee'])&&
+            ($_POST['portes'])&&
+            ($_POST['prix']))
+        {
             //enregistrement
             $voiture = new voiture();
             $voiture->setMarque($_POST['marque']);
@@ -59,7 +65,7 @@ class DefaultController extends Controller
                 $em->persist($voiture);
                 $em->flush();
 
-            } catch (\Exception $e) {
+            }catch(\Exception $e){
                 $error = "une erreur est survenue :" . $e->getMessage();
             }
 

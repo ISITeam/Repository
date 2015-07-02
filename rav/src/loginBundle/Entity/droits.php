@@ -32,21 +32,11 @@ class droits
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Get droits
-     *
-     * @return string
-     */
-    public function getDroits()
-    {
-        return $this->droits;
     }
 
     /**
@@ -60,5 +50,15 @@ class droits
         $this->droits = $droits;
 
         return $this;
+    }
+
+    /**
+     * Get droits
+     *
+     * @return string 
+     */
+    public function getDroits()
+    {
+        return $this->droits;
     }
 }
