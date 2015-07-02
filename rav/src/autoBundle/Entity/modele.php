@@ -39,11 +39,21 @@ class modele
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
     }
 
     /**
@@ -60,13 +70,13 @@ class modele
     }
 
     /**
-     * Get nom
+     * Get marque
      *
-     * @return string 
+     * @return string
      */
-    public function getNom()
+    public function getMarque()
     {
-        return $this->nom;
+        return $this->marque;
     }
 
     /**
@@ -80,15 +90,5 @@ class modele
         $this->marque = $marque;
 
         return $this;
-    }
-
-    /**
-     * Get marque
-     *
-     * @return string 
-     */
-    public function getMarque()
-    {
-        return $this->marque;
     }
 }

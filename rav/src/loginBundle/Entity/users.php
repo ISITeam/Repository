@@ -53,11 +53,21 @@ class users
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get login
+     *
+     * @return string
+     */
+    public function getLogin()
+    {
+        return $this->login;
     }
 
     /**
@@ -74,13 +84,13 @@ class users
     }
 
     /**
-     * Get login
+     * Get password
      *
-     * @return string 
+     * @return string
      */
-    public function getLogin()
+    public function getPassword()
     {
-        return $this->login;
+        return $this->password;
     }
 
     /**
@@ -97,13 +107,13 @@ class users
     }
 
     /**
-     * Get password
+     * Get mail
      *
-     * @return string 
+     * @return string
      */
-    public function getPassword()
+    public function getMail()
     {
-        return $this->password;
+        return $this->mail;
     }
 
     /**
@@ -120,13 +130,13 @@ class users
     }
 
     /**
-     * Get mail
+     * Get droit
      *
-     * @return string 
+     * @return integer
      */
-    public function getMail()
+    public function getDroit()
     {
-        return $this->mail;
+        return $this->droit;
     }
 
     /**
@@ -140,15 +150,5 @@ class users
         $this->droit = $droit;
 
         return $this;
-    }
-
-    /**
-     * Get droit
-     *
-     * @return integer 
-     */
-    public function getDroit()
-    {
-        return $this->droit;
     }
 }

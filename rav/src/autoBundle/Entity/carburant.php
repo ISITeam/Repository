@@ -40,6 +40,16 @@ class carburant
     }
 
     /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
      * Set type
      *
      * @param string $type
@@ -50,15 +60,5 @@ class carburant
         $this->type = $type;
 
         return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
     }
 }
