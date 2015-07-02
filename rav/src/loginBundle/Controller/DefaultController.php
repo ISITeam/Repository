@@ -10,10 +10,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/login")
+     * @Route("/register")
      * @Template()
      */
-    public function indexAction()
+    public function registerAction()
     {
         $error = null;
         $user = null;
@@ -36,19 +36,22 @@ class DefaultController extends Controller
             }
         }
         // On fait le passage de paramètres à la vue index.html.twig
-        return array('error' => $error, "indexAction" => $user);
+        return array('error' => $error, "registerAction" => $user);
     }
-    public function allUsersAction()
-    {
-        $error = null;
+    /**
+     * @Route("/login")
+     * @Template()
+     */
+}
+public function loginAction()
+{
+    $error = null;
+    $user = null;
+    var_dump($_GET);
+    if ($_GET["login"] && $_GET["password"]) {
+        $user->setPassword($_GET["password"]);
+        $user->setLogin($_GET["login"]);
+    }
+        return array('error' => $error, "registerAction" => $user);
 
-        $repository = $this->getDoctrine()
-            ->getRepository('loginBundle:User');
-        try {
-            $allProfile = $repository->findAll();
-        }catch(\Exception $e){
-            $error = "une erreur est survenue " . $e->getMessage();
-        }
-        return array('error' => $error, "allUser" => $allProfile);
-    }
 }
