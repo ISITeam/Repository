@@ -38,11 +38,11 @@ class DefaultController extends Controller
         // On fait le passage de paramètres à la vue index.html.twig
         return array('error' => $error, "registerAction" => $user);
     }
+
     /**
      * @Route("/login")
      * @Template()
      */
-}
 public function loginAction()
 {
     $error = null;
@@ -54,4 +54,5 @@ public function loginAction()
     }
         return array('error' => $error, "registerAction" => $user);
 
+}
 }
