@@ -1,7 +1,8 @@
 {% extends "::base.html.twig" %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/rav.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/rav.css') }}" xmlns="http://www.w3.org/1999/html"
+          xmlns="http://www.w3.org/1999/html"/>
 {% endblock %}
 
 {% block body %}
@@ -9,15 +10,18 @@
     {% if error is not null %}
         {{ error }}
     {% endif %}
-<header></header>
+<nav>
+    Enregistrement des nouveaux véhicules
+</nav>
     <form action="/insertAuto" method="post" >
-        <input type="text" placeholder="marque" name="marque" />
-        <input type="text" placeholder="modele" name="modele" />
-        <input type="text" placeholder="carburant" name="carburant" />
-        <input type="text" placeholder="kilometrage" name="kilometrage" />
-        <input type="text" placeholder="annee" name="annee" />
-        <input type="text" placeholder="portes" name="portes" />
-        <input type="text" placeholder="prix" name="prix" />
-        <input type="submit" value="soumettre" />
+        Marque : <input type="text" placeholder="marque" name="marque" /></br>
+        Modèle : <input type="text" placeholder="modele" name="modele" /></br>
+        Carburant : <input type="text" placeholder="carburant" name="carburant" /></br>
+        Kilometrage : <input type="text" placeholder="kilometrage" name="kilometrage" /></br>
+        Année : <input type="text" placeholder="annee" name="annee" /></br>
+        Nombre de portes : <input type="text" placeholder="portes" name="portes" /></br>
+        Prix : <input type="text" placeholder="prix" name="prix" />
+
+        <button type="submit" value="soumettre" >Enregistrer</button>
     </form>
 {% endblock %}
