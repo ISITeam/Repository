@@ -16,7 +16,7 @@ class DefaultController extends Controller
     public function registerAction()
     {
         $error = null;
-        $user = null;
+
         var_dump($_POST);
         if (isset($_POST["mail"])) {
             $user = new users();
@@ -36,7 +36,7 @@ class DefaultController extends Controller
             }
         }
         // On fait le passage de paramètres à la vue index.html.twig
-        return array('error' => $error, "registerAction" => $user);
+        return array('error' => $error);
     }
 
     /**
@@ -46,13 +46,34 @@ class DefaultController extends Controller
 public function loginAction()
 {
     $error = null;
-    $user = null;
-    var_dump($_GET);
-    if ($_GET["login"] && $_GET["password"]) {
-        $user->setPassword($_GET["password"]);
-        $user->setLogin($_GET["login"]);
+
+    var_dump($_POST);
+    $repository = $this->getDoctrine()
+        ->getRepository('loginBundle:users');
+    if (isset($_POST["login"]) && ($_POST["password"])) {
+        $qb = $repository->createQueryBuilder('p');
+        $qb->where('p.login = :login')
+            ->setParameters(array('login' => $_POST["login"]));
+
+        $profile = $qb->getQuery()->getResult();
+
+        var_dump($profile);
+
+        if (false != $profile) {
+
+            if ($_POST['password'] == $profile[0]->getPassword()) {
+                echo "vous êtes connectés ";
+            } else {
+                echo "mauvais mot de passe";
+            }
+        }else{
+            echo "utilisateur innexistant";
+        }
+
     }
-        return array('error' => $error, "registerAction" => $user);
+
+
+    return array('error' => $error);
 
 }
 }
