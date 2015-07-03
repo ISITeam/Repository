@@ -46,7 +46,7 @@ class DefaultController extends Controller
 public function loginAction()
 {
     $error = null;
-
+    $connexion = null;
     //var_dump($_POST);
     $repository = $this->getDoctrine()
         ->getRepository('loginBundle:users');
