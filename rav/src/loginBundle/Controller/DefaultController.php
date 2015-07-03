@@ -17,7 +17,7 @@ class DefaultController extends Controller
     {
         $error = null;
 
-        var_dump($_POST);
+        //var_dump($_POST);
         if (isset($_POST["mail"])) {
             $user = new users();
             $user->setMail($_POST["mail"]);
@@ -47,7 +47,7 @@ public function loginAction()
 {
     $error = null;
 
-    var_dump($_POST);
+    //var_dump($_POST);
     $repository = $this->getDoctrine()
         ->getRepository('loginBundle:users');
     if (isset($_POST["login"]) && ($_POST["password"])) {
@@ -57,23 +57,23 @@ public function loginAction()
 
         $profile = $qb->getQuery()->getResult();
 
-        var_dump($profile);
+        //var_dump($profile);
 
         if (false != $profile) {
 
             if ($_POST['password'] == $profile[0]->getPassword()) {
-                echo "vous êtes connectés ";
+               $connexion = "vous êtes connectés";
             } else {
-                echo "mauvais mot de passe";
+                $connexion = "mauvais mot de passe";
             }
         }else{
-            echo "utilisateur innexistant";
+            $connexion = "utilisateur innexistant";
         }
 
     }
 
 
-    return array('error' => $error);
+    return array('error' => $error, 'connexion' => $connexion);
 
 }
 }
