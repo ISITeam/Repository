@@ -40,7 +40,7 @@ class DefaultController extends Controller
     {
         $error = null;
 
-        //var_dump($_POST);
+        var_dump($_POST);
 
         if(isset($_POST['marque'])&&
             ($_POST['modele'])&&

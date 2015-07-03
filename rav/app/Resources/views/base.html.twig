@@ -5,17 +5,9 @@
         <title>{% block title %}RHONE AUTO VENTE{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="stylesheet" href="{{ asset('css/rav.css') }}" />
     </head>
     <body>
-    <header>
-        <h2>RHONE AUTO VENTE</h2></br>
-    </header>
-    <formbody style="color:red; font-weight:bold" onclick>
-        <input type="button" value="Catalogue" onclick="self.location.href='auto'"/>
-        <input type="button" value="Ajout véhicule" onclick="self.location.href='insertAuto'"/>
-    </formbody>
-    {% block body %}{% endblock %}
+        {% block body %}{% endblock %}
 
         {% block javascripts %}{% endblock %}
     </body>
