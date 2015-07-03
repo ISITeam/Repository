@@ -1,3 +1,11 @@
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/rav.css') }}" />
+{% endblock %}
+
+{% block body %}
+
 <form action="/register" method="post">
 
 
@@ -10,3 +18,4 @@
 
 
 </form>
+{% endblock %}

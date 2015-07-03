@@ -11,10 +11,15 @@
     <header>
         <h2>RHONE AUTO VENTE</h2></br>
     </header>
-    <formbody style="color:red; font-weight:bold" onclick>
+    <nav id="sidebar">
+
+        <input type="button" value="Accueil" onclick="self.location.href='/'"/>
+        <input type="button" value="Inscription" onclick="self.location.href='register'"/>
+        <input type="button" value="Connexion" onclick="self.location.href='login'"/>
         <input type="button" value="Catalogue" onclick="self.location.href='auto'"/>
         <input type="button" value="Ajout véhicule" onclick="self.location.href='insertAuto'"/>
-    </formbody>
+
+    </nav>
     {% block body %}{% endblock %}
     {% block javascripts %}{% endblock %}
     </body>
